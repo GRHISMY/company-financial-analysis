@@ -26,6 +26,10 @@ git clone https://github.com/GRHISMY/company-financial-analysis.git ~/.codex/ski
 
 入口：[SKILL.md](SKILL.md)。详细研究方法按入口中的链接逐步读取。
 
+## 已有研究数据
+
+[下载 2026-11-07 研究数据快照](https://github.com/GRHISMY/company-financial-analysis/releases/tag/research-data-2026-11-07)：三家公司的完整现有案例、原始 PDF、中间过程数据、比较报告及 SQLite。大文件保存在同一仓库的 Release 附件，需单独下载；[内容、校验与恢复说明](research-data/README.md)。
+
 ## 运行环境
 
 - Python 3.9 或更新版本，Python 脚本使用标准库。
@@ -57,4 +61,4 @@ python3 scripts/cfa.py --help
 python3 -B -m unittest discover -s scripts -p 'test_*.py'
 ```
 
-测试使用临时目录与合成材料，不依赖个人研究案例。仓库包含 Skill、脚本、测试及必要说明，不包含财报原件、书籍 PDF、登录凭据、个人研究底稿或 SQLite 数据库。
+测试使用临时目录与合成材料，不依赖研究案例。Skill 源码与研究快照分别提供：源码随 Git 克隆，PDF、底稿及 SQLite 从上述 Release 下载。
