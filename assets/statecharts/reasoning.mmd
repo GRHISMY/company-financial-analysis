@@ -1,0 +1,74 @@
+---
+title: "AI 如何理解并判断一家公司"
+---
+stateDiagram-v2
+  state "Legend" as legend {
+    lg0: 商业解释
+    lg1: 寻找证据
+    lg2: 财务互证
+    lg3: 反证修正
+    lg4: 结论
+    lg5: 有限判断
+  }
+  class lg0 blue
+  class lg1 orange
+  class lg2 teal
+  class lg3 pink
+  class lg4 purple
+  class lg5 yellow
+  s0: 界定公司业务与研究问题
+  s1: 对谁负责及兑现什么承诺
+  s2: 客户价值与盈利假说
+  s3: 把问题转换为证据地图
+  s4: PDF 通读与资料定位
+  s5: 有限判断并明确缺口
+  s6: 母子主体和利益归属
+  s7: 交付结论及后续验证条件
+  s8: 三表与附注交叉验证
+  s9: 资产战略与投入代价
+  s10: 利润来源与持续性
+  s11: 现金来源与支付能力
+  s12: 连接因果链并提出反证
+  s13: 形成有依据的经营判断
+  s14: 原盈利假说需要改写
+  [*] --> s0
+  s0 --> s1: 确认业务与实际披露期间
+  s1 --> s2: 区分付款 使用 决策和受益
+  s2 --> s3: 解释为何付钱和利润如何保留
+  s3 --> s4: 按行业设计章节与旁证计划
+  s4 --> s5: 替代来源仍缺关键材料
+  s4 --> s6: 通读并追踪附注或复用已有证据
+  s5 --> s7: 交付判断 风险与失效条件
+  s6 --> s8: 定位经营 现金 债务与权益主体
+  s7 --> s3: 新披露或客户行为改变
+  s8 --> s9: 检验投入怎样支持交付
+  s8 --> s10: 检验利润怎样形成
+  s8 --> s11: 检验收现与可用性
+  s9 --> s3: 发现异常 回到证据地图
+  s9 --> s8: 形成战略与资产质量判断
+  s10 --> s3: 发现异常 回到证据地图
+  s10 --> s8: 形成利润质量判断
+  s11 --> s3: 发现异常 回到证据地图
+  s11 --> s8: 形成现金质量判断
+  s8 --> s12: 三表分别核查后汇合
+  s12 --> s5: 关键环节未证实
+  s12 --> s3: 扩词 换章节 查跨年或外部旁证
+  s12 --> s14: 事实反驳原解释
+  s12 --> s13: 关键证据足以形成判断
+  s13 --> s7: 交付判断 风险与失效条件
+  s14 --> s1: 重新审视责任对象与盈利机制
+  class s0 blue
+  class s1 blue
+  class s2 blue
+  class s3 orange
+  class s4 orange
+  class s5 yellow
+  class s6 orange
+  class s7 purple
+  class s8 teal
+  class s9 teal
+  class s10 teal
+  class s11 teal
+  class s12 pink
+  class s13 purple
+  class s14 pink

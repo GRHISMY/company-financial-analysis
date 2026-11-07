@@ -1,0 +1,61 @@
+---
+title: "新公司怎样发现三表之外的业务证据"
+---
+stateDiagram-v2
+  state "Legend" as legend {
+    lg0: 问题定义
+    lg1: 原件与阅读
+    lg2: 证据调查
+    lg3: 解释评估
+    lg4: 判断有据
+    lg5: 明确缺口
+  }
+  class lg0 blue
+  class lg1 purple
+  class lg2 teal
+  class lg3 orange
+  class lg4 teal
+  class lg5 yellow
+  s0: 按业务问题建立公司与行业词图
+  s1: 查询SQLite定位既有证据
+  s2: 通读业务治理重大事项与重要附注
+  s3: 获取并核验原始PDF
+  s4: 改查公司或交易所原始披露
+  s5: 按语义主体及同义词定位
+  s6: 扩展目录邻页OCR与其他年度 限一轮
+  s7: 形成有限判断并记录证据缺口
+  s8: 核对原页附注口径与跨年变化
+  s9: 比较盈利解释履责证据与替代解释
+  s10: 补客户监管等原始旁证
+  s11: 形成有依据的业务与履责判断
+  [*] --> s0
+  s0 --> s1: 明确谁付款使用受益及承诺
+  s1 --> s2: 复用已核验原件 [缓存命中]
+  s1 --> s3: 取得对应期间原件 [未命中或版本失效]
+  s2 --> s5: 先理解业务及非三表事项
+  s3 --> s4: 保留失败并更换原始来源
+  s3 --> s2: 核对主体期间版本与来源
+  s4 --> s7: 记录缺失期间和影响 [无可核验原件]
+  s4 --> s2: 核验替代来源原件
+  s5 --> s6: 未命中只表示尚未定位
+  s5 --> s8: 找到候选证据
+  s6 --> s9: 保留检索范围和缺口 [仍未定位]
+  s6 --> s8: 扩搜找到相关章节
+  s8 --> s9: 核准交付效果并辨明证据边界
+  s8 --> s6: 重查语义主体与年度 [本轮尚未扩搜]
+  s8 --> s10: 实际效果须从客户或监管补证
+  s9 --> s7: 写明缺口及可能改变判断的证据
+  s9 --> s11: 连接事实推断及失效条件
+  s10 --> s9: 核对旁证质量与适用边界
+  class s0 blue
+  class s1 blue
+  class s2 purple
+  class s3 purple
+  class s4 purple
+  class s5 teal
+  class s6 teal
+  class s7 yellow
+  class s8 teal
+  class s9 orange
+  class s10 teal
+  class s11 teal
