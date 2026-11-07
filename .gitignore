@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+*.sqlite*
+*.db
+# Keep research cases outside this source repository.
+/raw/
+/reading/
+/workpapers/
+/analysis/
+/manifest.json
+/case-state.json
